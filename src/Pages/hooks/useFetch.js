@@ -3,11 +3,16 @@ import axios from "axios";
 
 const UseFetch = () => {
   const [data, setData] = useState([])
+  const [error, setError] = useState(null)
 
   const fetchData = async () =>{
-    const response = await axios.get("https://www.themealdb.com/api/json/v1/1/categories.php")
-    const newData = [...response, ...data]
-    setData(newData)
+    try {
+      const response = await axios.get("https://www.themealdb.com/api/json/v1/1/categories.php")
+      setData(response.data)
+      } catch (error) {
+        setError("error")
+        setLoading(false)
+    }
   }
 
   useEffect(() => {
@@ -15,6 +20,6 @@ const UseFetch = () => {
   }, [])
 
 
-  return{data}
+  return{data, error}
 }
 export default UseFetch

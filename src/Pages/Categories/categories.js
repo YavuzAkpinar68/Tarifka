@@ -4,8 +4,11 @@ import CategoriesCard from "./categoriesCard";
 import UseFetch from "../hooks/useFetch";
 
 const Categories = () => {
-  const {data} = UseFetch()
+  const {data, error} = UseFetch()
 
+  if (error) {
+    return <View><Text>{error}</Text></View>;
+  }
   return(
     <View>
       <FlatList
