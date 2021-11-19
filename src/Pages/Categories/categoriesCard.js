@@ -1,6 +1,7 @@
 import { useNavigation } from "@react-navigation/core";
 import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
+import Config from "react-native-config";
 
 const CategoriesCard = ({item}) => {
   const {navigate} = useNavigation()
