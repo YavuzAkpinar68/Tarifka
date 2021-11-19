@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Config from "react-native-config";
 
 const UseFetch = () => {
   const [data, setData] = useState([])
@@ -7,7 +8,7 @@ const UseFetch = () => {
 
   const fetchData = async () =>{
     try {
-      const response = await axios.get("https://www.themealdb.com/api/json/v1/1/categories.php")
+      const response = await axios.get(Config.API_URL)
       setData(response.data)
       } catch (error) {
         setError("error")

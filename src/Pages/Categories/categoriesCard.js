@@ -1,14 +1,20 @@
+import { useNavigation } from "@react-navigation/core";
 import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 
 const CategoriesCard = ({item}) => {
+  const {navigate} = useNavigation()
+
   return(
-    <View style={styles.viewContainer}>
+    <TouchableOpacity
+      onPress={() => navigate("Meal")}
+      style={styles.viewContainer}>
       <Image
         style={styles.imageContainer} 
         source={{uri:item.strCategoryThumb}}/>
       <Text>{item.strCategory}</Text>
-    </View>
+    </TouchableOpacity>
+
   )
 }
 export default CategoriesCard
