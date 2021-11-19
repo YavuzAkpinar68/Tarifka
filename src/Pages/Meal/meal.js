@@ -1,11 +1,18 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, FlatList } from "react-native";
+import UseFetchMeal from "../hooks/useFetchMeal";
+import MealCard from "./mealCard";
 
 const Meal = (props) => {
-  const data = props.route.params.data
+  const info = props.route.params.data.strCategory
+  const {data, error, loading} = UseFetchMeal(info)
+
   return(
-    <View>
-      <Text>Meals</Text>
+    <View> 
+      {
+        <FlatList data={data.meals} renderItem={({item}) => <MealCard item = {item}/> }/>
+      }
+     
     </View>
   )
 }
