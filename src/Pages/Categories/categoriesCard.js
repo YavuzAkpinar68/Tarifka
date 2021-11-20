@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   viewContainer:{
     flexDirection:"row",
     margin:10,
-    backgroundColor:"white",
+    backgroundColor:"seashell",
     padding:10,
     borderTopLeftRadius:40,
     borderBottomLeftRadius:40,

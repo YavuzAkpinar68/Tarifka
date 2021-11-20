@@ -11,9 +11,18 @@ const App = () => {
   return(
    <NavigationContainer>
      <Stack.Navigator>
-       <Stack.Screen name="Categories" component={Categories}></Stack.Screen>
-       <Stack.Screen name="Meal" component={Meal}></Stack.Screen>
-       <Stack.Screen name ="Detail" component={Detail}></Stack.Screen>
+       <Stack.Screen 
+        name="Categories" 
+        component={Categories}
+        options={{headerTitleAlign:"center"}}></Stack.Screen>
+       <Stack.Screen 
+        name="Meal" 
+        component={Meal}
+        options={{headerTitleAlign:"center"}}></Stack.Screen>
+       <Stack.Screen 
+        name ="Detail" 
+        component={Detail}
+        options={{headerTitleAlign:"center"}}></Stack.Screen>
      </Stack.Navigator>
    </NavigationContainer>
   )
