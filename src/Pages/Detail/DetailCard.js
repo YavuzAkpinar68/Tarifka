@@ -5,6 +5,7 @@ const DetailCard = ({item}) => {
   return(
     <View>
       <Text>{item.strMeal}</Text>
+      <Text>{item.strInstructions}</Text>
     </View>
   )
 }

@@ -13,7 +13,6 @@ const Categories = () => {
       <Text>{error}</Text>
     </View>
     )
-   
   }
   return(
     <View>
@@ -21,6 +20,7 @@ const Categories = () => {
       :<FlatList
       data={data.categories}
       renderItem={({item}) => <CategoriesCard item={item}/> }
+      contentContainerStyle={{backgroundColor:"aqua"}}
       />
         
       }
