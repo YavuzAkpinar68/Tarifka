@@ -8,7 +8,7 @@ const CategoriesCard = ({item}) => {
 
   return(
     <TouchableOpacity
-      onPress={() => navigate("Meal")}
+      onPress={() => navigate("Meal", {data: item})}
       style={styles.viewContainer}>
       <Image
         style={styles.imageContainer} 

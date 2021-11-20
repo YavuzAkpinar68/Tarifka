@@ -5,10 +5,15 @@ import UseFetch from "../hooks/useFetch";
 import Loading from "../../Components/Loading/loading";
 
 const Categories = () => {
-  const {data, error, loading} = UseFetch()
+  const {data, error, loading} = UseFetch(`categories.php`)
 
   if (error) {
-    return <View><Text>{error}</Text></View>;
+    return (
+      <View>
+      <Text>{error}</Text>
+    </View>
+    )
+   
   }
   return(
     <View>

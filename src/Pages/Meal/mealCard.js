@@ -1,9 +1,21 @@
+import { useNavigation } from "@react-navigation/core";
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 
 const MealCard = ({item}) => {
+  const {navigate} = useNavigation()
   return(
-    <View><Text>{item.strMeal}</Text></View>
+    <TouchableOpacity onPress={() => navigate("Detail", {data: item})}>
+      <Image source={{uri:item.strMealThumb}} style={styles.imageContainer}></Image>
+      <Text>{item.strMeal}</Text>
+    </TouchableOpacity>
   )
 }
 export default MealCard
+
+const styles = StyleSheet.create({
+  imageContainer:{
+    height:200,
+    width:200
+  }
+})
